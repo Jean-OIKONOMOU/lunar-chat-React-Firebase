@@ -1,26 +1,83 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import SignUpForm from "./SignUpForm";
+import LoginForm, { cheese } from "./LoginForm";
+import "./index.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { auth } from "./fire";
+// const foodRef = firebaseApp.database().ref("foods");
+// foodRef.push({
+//   name: "Pizza",
+//   price: 10.0,
+//   color: "louise"
+// });
+
+// console.log(firebaseApp.auth());
+
+auth.createUserWithEmailAndPassword('q@gmail.com', '123qqq')
+.then(response => console.log(response))
+.catch(err => console.error(err))
+
+class App extends Component {
+  state = {
+    hasSignedUp: false,
+    isLoggedIn: false,
+    email: "",
+    newsletter: false,
+    text: ""
+  };
+
+  // delete = e => {
+  //   foodRef.delete()
+  // };
+
+  handleSignUp = (email, password) => {
+    // auth.createUserWithEmailAndPassword(email, password)
+    //     .then(user => console.log(user))
+    //     .catch(err => console.log(err)
+    //     )
+    console.log(email, password);
+  };
+
+  handleLogin = ({email, password}) => {
+    
+    console.log("App Component", this.state);
+    this.setState({
+          isLoggedIn: true,
+          email: email,
+          password: password,
+        });
+    };
+
+  newsletter = e => {
+    this.setState(state => {
+      // I'm making a backup of the state in a const called newState so as not to change the State.
+      const newState = Object.assign({}, state);
+      newState.newsletter = !newState.newsletter;
+      return newState;
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="App">
+          <pre>{JSON.stringify(this.state, null, 3)}</pre>
+        </div>
+        <h1>{cheese}</h1>
+        <div className="container">
+          <div className="row">
+            <SignUpForm
+              handleSignUp={this.handleSignUp}
+              newsletter={this.newsletter}
+              text={this.text}
+            />
+            <LoginForm handleLogin={this.handleLogin} text={this.text}/>
+            {/* <button onClick={this.delete}>SALUT</button> */}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

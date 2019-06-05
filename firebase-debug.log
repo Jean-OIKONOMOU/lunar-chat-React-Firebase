@@ -1,0 +1,25 @@
+[debug] [2019-05-31T12:58:04.133Z] ----------------------------------------------------------------------
+[debug] [2019-05-31T12:58:04.136Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Alex\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-05-31T12:58:04.136Z] CLI Version:   6.10.0
+[debug] [2019-05-31T12:58:04.137Z] Platform:      win32
+[debug] [2019-05-31T12:58:04.137Z] Node Version:  v10.15.0
+[debug] [2019-05-31T12:58:04.138Z] Time:          Fri May 31 2019 14:58:04 GMT+0200 (GMT+02:00)
+[debug] [2019-05-31T12:58:04.138Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-31T12:58:04.149Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-31T12:58:04.150Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Forest\BECODE\2019WebDevRessources\mySites\REACTWORKS\lunar-chat
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
