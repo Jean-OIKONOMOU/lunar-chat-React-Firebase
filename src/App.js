@@ -13,9 +13,9 @@ import { auth } from "./fire";
 
 // console.log(firebaseApp.auth());
 
-auth.createUserWithEmailAndPassword('q@gmail.com', '123qqq')
-.then(response => console.log(response))
-.catch(err => console.error(err))
+// auth.createUserWithEmailAndPassword(this.state.email, this.state.password)
+// .then(response => console.log(response))
+// .catch(err => console.error(err))
 
 class App extends Component {
   state = {
@@ -31,11 +31,10 @@ class App extends Component {
   // };
 
   handleSignUp = (email, password) => {
-    // auth.createUserWithEmailAndPassword(email, password)
-    //     .then(user => console.log(user))
-    //     .catch(err => console.log(err)
-    //     )
-    console.log(email, password);
+    auth.createUserWithEmailAndPassword(email, password)
+        .then(user => console.log(user))
+        .catch(err => console.log(err)
+        )
   };
 
   handleLogin = ({email, password}) => {
