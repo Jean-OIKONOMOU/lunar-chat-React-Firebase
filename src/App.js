@@ -45,17 +45,15 @@ class App extends Component {
         .then(user => {
           console.log(user)
           alert('YOU MAY PASS.')
+          this.setState({
+            isLoggedIn: true,
+            email: email,
+            password: password,
+          });
         })
         .catch(err => {
           err.code === "auth/wrong-password" ? alert("Incorrect username // password.") : alert('An unknown error has occurred.');
         })
-        // (err.code == "auth/wrong-password") ? (alert("warning")) : (alert('ok'))
-    console.log("App Component", this.state);
-    this.setState({
-          isLoggedIn: true,
-          email: email,
-          password: password,
-        });
     };
 
   newsletter = e => {

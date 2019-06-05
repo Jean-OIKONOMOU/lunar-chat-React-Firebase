@@ -31,7 +31,6 @@ class LoginForm extends Component {
     if (this.state.email === "spinthewheel@gmail.com" && this.state.password === "spinthewheel") {
       alert("A WORTHY SACRIFICE FOR THE WHEEL");
     }
-    console.log("App", this.state, this.props);
   };
 
   render() {
