@@ -30,11 +30,14 @@ class App extends Component {
   //   foodRef.delete()
   // };
 
-  handleSignUp = (email, password) => {
+  handleSignUp = ({email, password}) => {
+    alert("Thanks for signing up " + email + " !\nPlease check your email to verify your account.");
     auth.createUserWithEmailAndPassword(email, password)
-        .then(user => console.log(user))
-        .catch(err => console.log(err)
-        )
+        // .then(user => console.log(user))
+        .catch(err => this.setState({
+          text: err.message
+        })
+      )
   };
 
   handleLogin = ({email, password}) => {
@@ -69,6 +72,7 @@ class App extends Component {
               handleSignUp={this.handleSignUp}
               newsletter={this.newsletter}
               text={this.text}
+              salut={this.salut}
             />
             <LoginForm handleLogin={this.handleLogin} text={this.text}/>
             {/* <button onClick={this.delete}>SALUT</button> */}
