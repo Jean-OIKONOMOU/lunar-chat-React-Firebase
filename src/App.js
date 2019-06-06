@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import SignUpForm from "./SignUpForm";
 import LoginForm, { cheese } from "./LoginForm";
-import "./index.css";
-
+import SideBar from './SideBar';
+import "bulma";
 import { auth } from "./fire";
+
 // const foodRef = firebaseApp.database().ref("foods");
 // foodRef.push({
 //   name: "Pizza",
@@ -69,16 +70,15 @@ class App extends Component {
       });
   };
 
-logout = (e) => {
-  auth.signOut()
-      .then(() => {
-        this.setState({
-          email: '',
-          uid: null,
-          isLoggedIn: false,
-        });
+  logout = e => {
+    auth.signOut().then(() => {
+      this.setState({
+        email: "",
+        uid: null,
+        isLoggedIn: false
       });
-}
+    });
+  };
 
   newsletter = e => {
     this.setState(state => {
@@ -91,26 +91,25 @@ logout = (e) => {
 
   render() {
     return (
-      <div>
-        <div className="App">
-          <pre>{JSON.stringify(this.state, null, 2)}</pre>
-          <button className="center" onClick={this.logout}>LOG ME OUT NOW!</button>
-        </div>
-        {this.state.isLoggedIn ? (
-          <h1>Welcome {this.state.uid} !</h1>
-        ) : (
-          <h1>Please log in for the full experience.</h1>
-        )}
-        <h1>{cheese}</h1>
-        <div className="container">
-          <div className="row">
-            <SignUpForm
-              handleSignUp={this.handleSignUp}
-              newsletter={this.newsletter}
-              text={this.text}
-              salut={this.salut}
-            />
-            <LoginForm handleLogin={this.handleLogin} text={this.text} />
+      <div className="columns vh-100">
+        <SideBar />
+        <div className="column hero">
+          <div className="hero-body">
+            <div className="columns is-centered">
+              <div className="column is-half">
+                <SignUpForm
+                  handleSignUp={this.handleSignUp}
+                  newsletter={this.newsletter}
+                  text={this.text}
+                  salut={this.salut}
+                />
+              </div>
+            </div>
+            <div className="columns is-centered">
+              <div className="column is-half">
+                <LoginForm handleLogin={this.handleLogin} text={this.text} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
