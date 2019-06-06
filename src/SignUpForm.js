@@ -4,7 +4,8 @@ import React, { Component } from "react";
 class SignUpForm extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    username: ""
   };
 
   updateEmail = e => {
@@ -21,12 +22,20 @@ class SignUpForm extends Component {
     
   };
 
+  // updateUsername = e => {
+  //   this.setState({
+  //     username: e.target.value
+  //   });
+    
+  // };
+
 onSubmit = e => {
   e.preventDefault();
   this.props.handleSignUp(this.state);
   this.setState({
     email: '',
     password: '',
+    // username: ''
   })
 }
 
@@ -52,6 +61,14 @@ onSubmit = e => {
             onChange={this.updatePassword}
             value={this.state.password}
           />
+          {/* <input
+            className="form"
+            placeholder="Display name"
+            type="text"
+            htmlFor="username"
+            onChange={this.updateUsername}
+            value={this.state.username}
+          /> */}
           <button className="form button" type="submit">
             Sign Up
           </button>
