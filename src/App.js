@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import SignUpForm from "./SignUpForm";
 import LoginForm, { cheese } from "./LoginForm";
-import SideBar from './SideBar';
+import SideBar from "./SideBar";
 import "bulma";
 import { auth } from "./fire";
+import Panel from "./Panel";
 
 // const foodRef = firebaseApp.database().ref("foods");
 // foodRef.push({
@@ -25,7 +26,6 @@ class App extends Component {
     email: "",
     password: null,
     newsletter: false,
-    text: "",
     uid: null,
     username: ""
   };
@@ -92,26 +92,14 @@ class App extends Component {
   render() {
     return (
       <div className="columns vh-100">
-        <SideBar />
-        <div className="column hero">
-          <div className="hero-body">
-            <div className="columns is-centered">
-              <div className="column is-half">
-                <SignUpForm
-                  handleSignUp={this.handleSignUp}
-                  newsletter={this.newsletter}
-                  text={this.text}
-                  salut={this.salut}
-                />
-              </div>
-            </div>
-            <div className="columns is-centered">
-              <div className="column is-half">
-                <LoginForm handleLogin={this.handleLogin} text={this.text} />
-              </div>
-            </div>
-          </div>
-        </div>
+        <SideBar logout={this.logout} uid={this.state.uid} />
+        <Panel>
+          <SignUpForm
+            handleSignUp={this.handleSignUp}
+            newsletter={this.newsletter}
+          />
+          <LoginForm handleLogin={this.handleLogin} />
+        </Panel>
       </div>
     );
   }
