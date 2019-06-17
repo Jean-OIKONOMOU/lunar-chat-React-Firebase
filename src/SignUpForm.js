@@ -19,13 +19,6 @@ class SignUpForm extends Component {
     });
   };
 
-  // updateUsername = e => {
-  //   this.setState({
-  //     username: e.target.value
-  //   });
-
-  // };
-
   onSubmit = e => {
     e.preventDefault();
     this.props.handleSignUp(this.state);
@@ -39,7 +32,7 @@ class SignUpForm extends Component {
   render() {
     return (
       
-        <div className="box">
+        <div className="box column is-half">
           <h1 className="title">Sign Up Form</h1>
           <form onSubmit={this.onSubmit}>
             <div className="field">
@@ -79,12 +72,12 @@ class SignUpForm extends Component {
             <button className="button is-fullwidth is-danger" type="submit">
               Sign Up
             </button>
-
+            <a role='button' onClick={this.props.goToLogin}>Or login instead?</a>
             <div className="field text-signUpForm">
-              <div className="control">
+              <div className="control has-text-centered">
                 <label className="checkbox">
-                  Check this box if you want also want to sign up for our{" "}
-                  <b>awesome newsletter</b> !
+                  Check this box if you want also want to sign up for our
+                  <b> awesome newsletter</b> !
                   <input
                     type="checkbox"
                     className="input-signUpForm"
@@ -94,6 +87,7 @@ class SignUpForm extends Component {
               </div>
             </div>
           </form>
+          
         </div>
       
     );

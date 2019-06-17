@@ -1,11 +1,11 @@
 import React from "react";
 
-const Panel = props => {
+const Panel = ({children}) => {
   return (
     <div className="column hero">
       <div className="hero-body">
         <div className="columns is-centered">
-          <div className="column is-half">{props.children}</div>
+          {children}
         </div>
       </div>
     </div>
