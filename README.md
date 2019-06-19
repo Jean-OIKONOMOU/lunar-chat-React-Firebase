@@ -1,5 +1,5 @@
 # Lunar-Chat
-Voila mon premier site crée avec Bootstrap 4 !
+Voila mon premier site crée avec React et Firebase !
 
 # Qui a fait le projet :
 Exclusivement moi, avec l'aide de la documentation de Firebase.
