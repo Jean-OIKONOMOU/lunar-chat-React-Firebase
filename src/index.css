@@ -5,7 +5,7 @@ html {
   line-height: 1.5;
   min-height: 100vh;
   min-width: 300px;
-  overflow-x: hidden;
+  overflow: hidden !important;
   padding: 0;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,7 +18,7 @@ html {
 }
 
 .vh-100 {
-  height: 100vh;
+  height: 100vh !important;
 }
 
 .px {
@@ -115,4 +115,73 @@ a {
   color: currentColor;
   cursor: pointer;
   text-decoration: none;
+}
+
+.list {
+  background-color: rgba(0, 0, 0, 0) !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  text-overflow: clip; 
+  word-break: keep-all;
+  border: 1px white solid;
+  padding: 7px;
+  max-width: 750px;
+}
+
+
+@media (min-width: 1281px) {
+  
+  html {
+    overflow-y: hidden !important;
+  }
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  html {
+    overflow-y: hidden !important;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  html {
+    overflow-y: scroll !important;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  html {
+    overflow-y: scroll !important;
+  }
+  
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  html {
+    overflow-y: scroll !important;
+  }
+  
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  html {
+    overflow-y: scroll !important;
+  }
+  
+}
+
+@media (min-width: 0) and (max-width: 320px) {
+  
+  html {
+    overflow-y: scroll !important;
+  }
+  
 }

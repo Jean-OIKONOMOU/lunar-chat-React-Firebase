@@ -34,7 +34,7 @@ class SendMessageForm extends Component {
               />
             </div>
             <div className="control">
-              <button type="submit" className="button is-primary">
+              <button type="submit" className="button is-danger">
                 Send
               </button>
             </div>

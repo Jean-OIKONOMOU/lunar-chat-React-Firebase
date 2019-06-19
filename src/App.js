@@ -42,7 +42,7 @@ class App extends Component {
       })
       .then(snapshot => {
         console.log("Current room messages", snapshot.val());
-        const messages = snapshot.val() || {};
+        const messages = snapshot.val();
         this.setState({
           messages: messages
         });
@@ -145,7 +145,7 @@ class App extends Component {
       .once("value")
       .then(snapshot => {
         // If there are no messages then send an empty object to State.
-        const messages = snapshot.val() || {};
+        const messages = snapshot.val();
         this.setState({
           selectedRoom: id,
           messages: messages
