@@ -58,6 +58,7 @@ class SignUpForm extends Component {
                   onChange={this.updatePassword}
                   value={this.state.password}
                 />
+                <p><em>Password must be at least 6 characters long.</em></p>
               </div>
             </div>
 

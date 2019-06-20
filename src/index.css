@@ -129,11 +129,31 @@ a {
   max-width: 750px;
 }
 
+.roomList {
+  background-color: rgba(0, 0, 0, 0) !important;
+  overflow-y: scroll;
+  max-height: 100px;
+  word-wrap: break-word;
+  text-overflow: clip; 
+  word-break: keep-all;
+}
+
+
+
 
 @media (min-width: 1281px) {
   
   html {
     overflow-y: hidden !important;
+  }
+
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
   }
   
 }
@@ -143,6 +163,15 @@ a {
   html {
     overflow-y: hidden !important;
   }
+
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
+  }
   
 }
 
@@ -150,6 +179,16 @@ a {
   
   html {
     overflow-y: scroll !important;
+  }
+
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
+
   }
   
 }
@@ -160,22 +199,51 @@ a {
     overflow-y: scroll !important;
   }
   
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
+    font-size: 17px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
   
   html {
     overflow-y: scroll !important;
+    
   }
   
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
+    font-size: 30px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
   
   html {
     overflow-y: scroll !important;
+    
   }
   
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
+    font-size: 30px;
+  }
 }
 
 @media (min-width: 0) and (max-width: 320px) {
@@ -184,4 +252,13 @@ a {
     overflow-y: scroll !important;
   }
   
+  .roomList {
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow-y: scroll;
+    max-height: 200px;
+    word-wrap: break-word;
+    text-overflow: clip; 
+    word-break: keep-all;
+    font-size: 30px;
+  }
 }

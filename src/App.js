@@ -41,8 +41,8 @@ class App extends Component {
           .once("value");
       })
       .then(snapshot => {
-        console.log("Current room messages", snapshot.val());
-        const messages = snapshot.val();
+        // console.log("Current room messages", snapshot.val());
+        const messages = snapshot.val() || {};
         this.setState({
           messages: messages
         });
@@ -71,9 +71,9 @@ class App extends Component {
       });
       // Event listener to keep the page from refreshing when a new messages is posted. It has to merge it with the preexisting messages in the room.
       messageRef.on("child_added", snapshot => {
-        const messages = snapshot.val();
+        const messages = snapshot.val() ;
         const key = snapshot.key;
-        console.log(key);
+        // console.log(key);
         if (messages.roomId === this.state.selectedRoom) {
           this.setState({
             messages: {
@@ -113,6 +113,7 @@ class App extends Component {
         });
       })
       .catch(err => {
+        console.log(err);
         err.code === "auth/wrong-password"
           ? alert("Incorrect username // password.")
           : alert("An unknown error has occurred.");
@@ -145,7 +146,7 @@ class App extends Component {
       .once("value")
       .then(snapshot => {
         // If there are no messages then send an empty object to State.
-        const messages = snapshot.val();
+        const messages = snapshot.val() || {};
         this.setState({
           selectedRoom: id,
           messages: messages
@@ -178,6 +179,8 @@ class App extends Component {
           uid={this.state.uid}
           setRoom={this.setRoom}
           addRoom={this.addRoom}
+          isLoggedIn={this.state.isLoggedIn}
+          email={this.state.email}
         />
 
         {this.state.isLoggedIn ? (

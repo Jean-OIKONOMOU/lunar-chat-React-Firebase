@@ -1,7 +1,7 @@
 import React from "react";
 import RoomsList from './RoomsList';
 
-const SideBar = ({ logout, rooms, selectedRoom, setRoom, addRoom }) => {
+const SideBar = ({ logout, rooms, selectedRoom, setRoom, addRoom, isLoggedIn, email }) => {
 
   // Welcome Message
   // let title = e => {
@@ -16,6 +16,7 @@ const SideBar = ({ logout, rooms, selectedRoom, setRoom, addRoom }) => {
     <div className="column is-3 hero is-danger px" >
       <RoomsList addRoom={addRoom} rooms={rooms} selectedRoom={selectedRoom} setRoom={setRoom}/>
       <div className="control px">
+      <div className="px has-text-centered">{isLoggedIn ? <p>Logged in as {email}</p> : <p>Not logged in yet.</p>}</div>
         <button className="is-fullwidth button" onClick={logout}>
           LOG ME OUT NOW!
         </button>
