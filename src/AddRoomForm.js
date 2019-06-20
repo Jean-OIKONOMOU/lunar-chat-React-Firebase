@@ -29,13 +29,13 @@ class AddRoomForm extends Component {
               <input
                 type="text"
           value={this.state.roomName}
-          placeholder="Room name"
+          placeholder="Type your room name."
           className="input"
           onChange={e => this.setState({ roomName: e.target.value })}
               />
             </div>
             <div className="control">
-              <button type="submit" className="button is-dark">
+              <button type="submit" className="button is-black">
                 Add
               </button>
             </div>

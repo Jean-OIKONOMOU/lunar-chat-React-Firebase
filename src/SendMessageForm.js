@@ -15,7 +15,6 @@ class SendMessageForm extends Component {
       created: Date.now()
     }
     this.props.sendMessage(message);
-    console.log(message);
     this.setState({text: ''});
   };
 
@@ -27,7 +26,7 @@ class SendMessageForm extends Component {
             <div className="control is-expanded">
               <input
                 className="input"
-                placeholder="Type in me"
+                placeholder="Type your message here."
                 type="text"
                 value={this.state.text}
                 onChange={e => this.setState({ text: e.target.value })}

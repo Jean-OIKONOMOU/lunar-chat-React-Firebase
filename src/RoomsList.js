@@ -16,7 +16,7 @@ const RoomsList = ({ addRoom, rooms, selectedRoom, setRoom }) => {
   return (
     <aside className="menu px">
       <h1 className="title">Lunar Threads</h1>
-      <ul className="menu-list roomList">          
+      <ul id="style-4" className="menu-list roomList">          
             {Object.keys(rooms)
               .map(roomKey => ({ ...rooms[roomKey], id: roomKey }))
               .map(roomObj => (

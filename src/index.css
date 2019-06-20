@@ -122,11 +122,29 @@ a {
   overflow-y: scroll;
   overflow-x: hidden;
   word-wrap: break-word;
-  text-overflow: clip; 
+  text-overflow: clip;
   word-break: keep-all;
-  border: 1px white solid;
+  border-right-style: none;
   padding: 7px;
   max-width: 750px;
+}
+
+#style-4::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar
+{
+    width: 13px;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+    border: 2px solid #555555;
 }
 
 .roomList {
@@ -134,15 +152,13 @@ a {
   overflow-y: scroll;
   max-height: 100px;
   word-wrap: break-word;
-  text-overflow: clip; 
+  text-overflow: clip;
   word-break: keep-all;
+  border: 1px solid black;
+  border-right-style: none;
 }
 
-
-
-
 @media (min-width: 1281px) {
-  
   html {
     overflow-y: hidden !important;
   }
@@ -152,14 +168,12 @@ a {
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
   }
-  
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  
   html {
     overflow-y: hidden !important;
   }
@@ -169,14 +183,12 @@ a {
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
   }
-  
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
   html {
     overflow-y: scroll !important;
   }
@@ -186,78 +198,70 @@ a {
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
-
   }
-  
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
   html {
     overflow-y: scroll !important;
   }
-  
+
   .roomList {
     background-color: rgba(0, 0, 0, 0) !important;
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
     font-size: 17px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-  
   html {
     overflow-y: scroll !important;
-    
   }
-  
+
   .roomList {
     background-color: rgba(0, 0, 0, 0) !important;
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
     font-size: 30px;
   }
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
   html {
     overflow-y: scroll !important;
-    
   }
-  
+
   .roomList {
     background-color: rgba(0, 0, 0, 0) !important;
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
     font-size: 30px;
   }
 }
 
 @media (min-width: 0) and (max-width: 320px) {
-  
   html {
     overflow-y: scroll !important;
   }
-  
+
   .roomList {
     background-color: rgba(0, 0, 0, 0) !important;
     overflow-y: scroll;
     max-height: 200px;
     word-wrap: break-word;
-    text-overflow: clip; 
+    text-overflow: clip;
     word-break: keep-all;
     font-size: 30px;
   }

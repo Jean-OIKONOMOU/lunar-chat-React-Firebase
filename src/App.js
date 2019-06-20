@@ -69,6 +69,7 @@ class App extends Component {
       this.setState({
         rooms: rooms
       });
+      
       // Event listener to keep the page from refreshing when a new messages is posted. It has to merge it with the preexisting messages in the room.
       messageRef.on("child_added", snapshot => {
         const messages = snapshot.val() ;
