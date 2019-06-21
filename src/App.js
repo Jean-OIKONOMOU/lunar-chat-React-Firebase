@@ -6,6 +6,8 @@ import "bulma";
 import { auth, messageRef, roomRef } from "./fire";
 import Panel from "./Panel";
 import ChatPanel from "./ChatPanel";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 class App extends Component {
   state = {
     hasSignedUp: false,
@@ -22,6 +24,7 @@ class App extends Component {
   };
 
   loadData = () => {
+    console.log(JSON.stringify(this.state, null, 2));
     roomRef
       .once("value")
       .then(snapshot => {
@@ -38,10 +41,11 @@ class App extends Component {
         return messageRef
           .orderByChild("roomId")
           .equalTo(selectedRoom)
-          .once("value");
+          .once("value")
+          
       })
+      
       .then(snapshot => {
-        // console.log("Current room messages", snapshot.val());
         const messages = snapshot.val() || {};
         this.setState({
           messages: messages
@@ -49,7 +53,7 @@ class App extends Component {
       })
       .catch(err => console.error(err));
   };
-
+  
   componentDidMount() {
     // Persist the login.
     auth.onAuthStateChanged(user => {
@@ -60,12 +64,14 @@ class App extends Component {
           uid,
           isLoggedIn: true
         });
+        this.loadData();
       }
     });
     this.loadData();
     // Event listener for the list of rooms. Prevents the need to refresh to fetch the new data.
     roomRef.on("value", snapshot => {
       const rooms = snapshot.val();
+      console.log(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
       this.setState({
         rooms: rooms
       });
@@ -126,7 +132,8 @@ class App extends Component {
       this.setState({
         email: "",
         uid: null,
-        isLoggedIn: false
+        isLoggedIn: false,
+        rooms: {}
       });
     });
   };
@@ -140,6 +147,7 @@ class App extends Component {
     });
   };
 
+ 
   setRoom = id => {
     messageRef
       .orderByChild("roomId")

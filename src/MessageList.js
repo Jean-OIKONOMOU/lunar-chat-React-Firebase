@@ -9,16 +9,6 @@ const Message = ({ message }) => {
         <div className="column">
           <p className="is-size-7 is-light">
             {message.email} <b>//</b>{" "}
-            {/* {new Intl.DateTimeFormat("en-GB", {
-              year: "2-digit",
-              month: "2-digit",
-              day: "2-digit",
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit"
-            }).format(message.created)} */}
-            {/* https://momentjs.com/docs/#/displaying/format/ 
-            https://devhints.io/wip/intl-datetime */}
             {moment(message.created).format("MMMM Do YYYY, h:mm:ss a")}
           </p>
         </div>

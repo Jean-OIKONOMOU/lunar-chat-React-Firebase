@@ -22,6 +22,7 @@ const RoomsList = ({ addRoom, rooms, selectedRoom, setRoom }) => {
               .map(roomObj => (
                 <Room key={roomObj.id} room={roomObj} selectedRoom={selectedRoom} setRoom={setRoom}/>
               ))}
+              <i class="far fa-trash-alt"></i>
       </ul>
       <div style={{marginTop: '30px'}}>
         <p className='is-size-5 has-text-white menu-label'>Add a room</p>

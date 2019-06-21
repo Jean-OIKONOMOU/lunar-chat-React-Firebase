@@ -17,13 +17,6 @@ class AddRoomForm extends Component {
       <form onSubmit={this.handleAddRoom}>
         <div className="control" />
         <h1>Choose a name for your room.</h1>
-        {/* <input
-          type="text"
-          value={this.state.roomName}
-          placeholder="Room name"
-          className="input"
-          onChange={e => this.setState({ roomName: e.target.value })}
-        /> */}
         <div className="field has-addons">
             <div className="control is-expanded">
               <input

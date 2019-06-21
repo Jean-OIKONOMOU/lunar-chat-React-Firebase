@@ -132,19 +132,22 @@ a {
 #style-4::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 #style-4::-webkit-scrollbar
 {
     width: 13px;
-    background-color: #F5F5F5;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 #style-4::-webkit-scrollbar-thumb
 {
     background-color: #000000;
     border: 2px solid #555555;
+    border-radius: 5px;
 }
 
 .roomList {
@@ -154,7 +157,7 @@ a {
   word-wrap: break-word;
   text-overflow: clip;
   word-break: keep-all;
-  border: 1px solid black;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-right-style: none;
 }
 
@@ -266,3 +269,4 @@ a {
     font-size: 30px;
   }
 }
+/* ADD 1024x1366 MEDIA QUERY */ 
