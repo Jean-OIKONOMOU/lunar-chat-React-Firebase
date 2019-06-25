@@ -175,6 +175,7 @@ class App extends Component {
       created: Date.now()
     };
     roomRef.push(room);
+    this.loadData();
   };
 
   render() {
