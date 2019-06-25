@@ -28,7 +28,7 @@ class AddRoomForm extends Component {
               />
             </div>
             <div className="control">
-              <button type="submit" className="button is-black">
+              <button type="submit" className="button is-black" title="Add a room">
                 Add
               </button>
             </div>

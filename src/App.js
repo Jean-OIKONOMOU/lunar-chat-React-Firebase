@@ -78,6 +78,7 @@ class App extends Component {
       
       // Event listener to keep the page from refreshing when a new messages is posted. It has to merge it with the preexisting messages in the room.
       messageRef.on("child_added", snapshot => {
+        
         const messages = snapshot.val() ;
         const key = snapshot.key;
         // console.log(key);
@@ -88,18 +89,27 @@ class App extends Component {
               [key]: messages
             }
           });
+          
         }
       });
     });
   }
 
   handleSignUp = ({ email, password }) => {
-    alert(
-      "Thanks for signing up " +
-        email +
-        " !\nPlease check your email to verify your account."
-    );
-    auth.createUserWithEmailAndPassword(email, password).catch(err =>
+    auth.createUserWithEmailAndPassword(email, password)
+    .then(user => {
+      alert(
+        "Thanks for signing up " +
+          email +
+          " !\nPlease check your email to verify your account."
+      );
+      this.setState({
+        isLoggedIn: true
+      })
+      window.location.reload();
+      this.loadData();
+    })
+    .catch(err =>
       this.setState({
         text: err.message
       })
@@ -118,6 +128,7 @@ class App extends Component {
           password: password,
           uid: uid
         });
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
